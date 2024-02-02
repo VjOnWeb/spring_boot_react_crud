@@ -55,6 +55,7 @@ function ListImageComponent () {
     try {
       const response = await axios.get(LINK_URL + 'all_images')
       setImages(response.data);
+      //Removed
       setShowModal(true);
     } catch (error) {
       console.error('Error retrieving images:', error.message)
