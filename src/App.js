@@ -1,15 +1,27 @@
 import React from 'react';
-import Footer from './components/FooterComponent.jsx';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import FooterComponent from './components/FooterComponent.jsx';
 import HeaderComponent from './components/HeaderComponent.jsx';
+import HomePage from './components/HomePage.jsx';
 import ListImageComponent from './components/ListImageComponent.jsx';
-import ListUserComponents from './components/ListUserComponents.jsx';
-function App() {      
+import UserManagementComponent from './components/UserManagementComponent.jsx';
+function App() {
   return (
     <>
+      <BrowserRouter>
       <HeaderComponent/>
-      <ListImageComponent />
-      <ListUserComponents/>
-      <Footer />
+        <Routes>
+
+          <Route path="/" element={<HomePage/>}></Route>
+          <Route path="/images" element={<ListImageComponent/>}></Route>
+
+          <Route path="/users" element={<UserManagementComponent/>}></Route>
+          {/* <Route path="/users" element={<ListUserComponents/>}></Route> */}
+
+        </Routes>
+      </BrowserRouter>
+
+      <FooterComponent />
     </>
   );
 }

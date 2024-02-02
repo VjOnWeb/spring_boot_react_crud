@@ -2,7 +2,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
-import { listImages } from '../services/userService';
+import { listAllImages } from '../services/ImageService';
 
 const LINK_URL = 'http://localhost:9898/api/images/';
 
@@ -36,6 +36,7 @@ function ListImageComponent() {
   };
 
   const handleGetImage = async () => {
+    // debug here
     try {
       const response = await axios.get(LINK_URL + `${imageId}`, {
         responseType: 'arraybuffer',
@@ -97,8 +98,8 @@ function ListImageComponent() {
     }
   };
   useEffect(() => {
-    // Assuming listImages is a function that returns a promise
-    listImages()
+    // Assuming listAllImages is a function that returns a promise
+    listAllImages()
       .then((response) => {
         setImages(response.data);
         if (response.data.length > 0) {
@@ -145,7 +146,8 @@ function ListImageComponent() {
             <img
               src={`data:image/jpeg;base64,${images[currentImageIndex]}`}
               alt={`${currentImageIndex + 1}`}
-              style={{ width: '100%', height: 'auto' }}
+              className='rounded img-fluid mx-auto d-block'
+              style={{ width: '500px', height: '500px' }}
             />
           )}
         </Modal.Body>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
     <footer className="bg-dark text-light py-3">
       <div className="container">
@@ -12,8 +12,9 @@ const Footer = () => {
           <div className="col-md-3">
             <h5>Quick Links</h5>
             <ul className="list-unstyled">
-              <li><a href="#home">Home</a></li>
-              <li><a href="imageCRUD.html">User Images</a></li>
+              <li><a href="http://localhost:3000/">Home</a></li>
+              <li><a href="http://localhost:3000/users">User List</a></li>
+              <li><a href="http://localhost:3000/images">User Images</a></li>
               <li><a href="#services">Services</a></li>
               {/* Add more links as needed */}
             </ul>
@@ -32,4 +33,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent;
