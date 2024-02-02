@@ -10,7 +10,7 @@ const HomePage = () => {
       <p>This is the home page of our application.</p>
 
       <p>
-        You can explore the following pages:
+        You can explore the following pages:</p>
         <ul>
           <li>
             <strong>Images Page:</strong> View and manage images.
@@ -21,7 +21,7 @@ const HomePage = () => {
             <Link to="/users"> Go to Users</Link>
           </li>
         </ul>
-      </p>
+  
     </div>
   );
 };

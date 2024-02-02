@@ -1,28 +1,26 @@
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import FooterComponent from './components/FooterComponent.jsx';
-import HeaderComponent from './components/HeaderComponent.jsx';
-import HomePage from './components/HomePage.jsx';
-import ListImageComponent from './components/ListImageComponent.jsx';
-import UserManagementComponent from './components/UserManagementComponent.jsx';
-function App() {
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import FooterComponent from './components/FooterComponent.jsx'
+import HeaderComponent from './components/HeaderComponent.jsx'
+import HomePage from './components/HomePage.jsx'
+import ListImageComponent from './components/ListImageComponent.jsx'
+import UserManagementComponent from './components/UserManagementComponent.jsx'
+function App () {
   return (
     <>
       <BrowserRouter>
-      <HeaderComponent/>
+        <HeaderComponent />
         <Routes>
+          <Route path='/' element={<HomePage />}></Route>
+          <Route path='/images' element={<ListImageComponent />}></Route>
 
-          <Route path="/" element={<HomePage/>}></Route>
-          <Route path="/images" element={<ListImageComponent/>}></Route>
-
-          <Route path="/users" element={<UserManagementComponent/>}></Route>
+          <Route path='/users' element={<UserManagementComponent />}></Route>
           {/* <Route path="/users" element={<ListUserComponents/>}></Route> */}
-
         </Routes>
       </BrowserRouter>
 
       <FooterComponent />
     </>
-  );
+  )
 }
-export default App;
+export default App
