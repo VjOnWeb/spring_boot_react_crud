@@ -9,4 +9,12 @@ module.exports = function (app) {
       changeOrigin: true,
     })
   );
+
+  // app.use(
+  //   '*',
+  //   createProxyMiddleware({
+  //     target: 'https://alphavantageapi.co', // Replace with the actual URL of your Spring Boot server
+  //     changeOrigin: true,
+  //   })
+  // );
 };

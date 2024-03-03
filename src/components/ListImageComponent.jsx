@@ -13,6 +13,7 @@ function ListImageComponent () {
   const [images, setImages] = useState([])
   const [displayedImage, setDisplayedImage] = useState(null)
   const [showModal, setShowModal] = useState(false)
+  const [showCard, setShowCard] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
   const handleFileChange = e => {
@@ -37,30 +38,41 @@ function ListImageComponent () {
   }
 
   const handleGetImage = async () => {
-    // TODO debug here
     try {
-      const response = await axios.get(LINK_URL + `${imageId}`, {
+      var imageid = imageId[currentImageIndex]?.id ? imageId[currentImageIndex]?.id : imageId 
+      const response = await axios.get(LINK_URL + `${imageid}`, {
         responseType: 'blob' // Change 'arraybuffer' to 'blob' previousresponseType: 'arraybuffer'
       })
 
       // const blob = new Blob([response.data], { type: 'image/jpeg' })
       const imageUrl = URL.createObjectURL(response.data);
       setDisplayedImage(imageUrl)
-      setShowModal(true)
+      // setShowModal(true)
+      setShowCard(true);
     } catch (error) {
       console.error('Error retrieving image:', error.message)
     }
   }
   const handleGetAllImages = async () => {
-    try {
-      const response = await axios.get(LINK_URL + 'all_images')
-      setImages(response.data);
-      //Removed
-      setShowModal(true);
-    } catch (error) {
-      console.error('Error retrieving images:', error.message)
-    }
+  try {
+    const response = await axios.get(LINK_URL + 'all_images');
+    const imagesData = response.data;
+
+    // Extract image data and IDs
+    const updatedImages = imagesData.map(image => ({
+      data: image.imageData
+    }));
+    setImages(updatedImages);
+
+    const updatedImageIds = imagesData.map(image => ({
+      id: image.id
+    }));
+    setImageId(updatedImageIds);
+    setShowModal(true);
+  } catch (error) {
+    console.error('Error retrieving images:', error.message);
   }
+};
 
   const handleModalClose = () => {
     setShowModal(false)
@@ -72,7 +84,7 @@ function ListImageComponent () {
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     )
     if (images.length > 0) {
-      handleGetImage(images[currentImageIndex - 1])
+      // handleGetImage(images[currentImageIndex - 1])
     }
   }
 
@@ -81,22 +93,23 @@ function ListImageComponent () {
       prevIndex === images.length - 1 ? 0 : prevIndex + 1
     )
     if (images.length > 0) {
-      handleGetImage(images[currentImageIndex + 1])
+      // handleGetImage(images[currentImageIndex + 1])
     }
   }
 
   const handleDeleteImage = async () => {
     try {
-      const imageIdToDelete = images[currentImageIndex]?.id
-
+      const imageIdToDelete = imageId[currentImageIndex]?.id
       if (imageIdToDelete) {
         console.log(`Deleting image with ID: ${imageIdToDelete}`)
 
         await axios.delete(`${LINK_URL}${imageIdToDelete}`)
         // Refresh the images after deletion
-        handleGetAllImages()
+        handleGetAllImages();
+        setShowModal(false);
         alert('Image deleted successfully!')
       } else {
+        //TODO
         console.error('Image ID is undefined or null.')
       }
     } catch (error) {
@@ -134,42 +147,52 @@ function ListImageComponent () {
 
       <Form.Group className='mb-3'>
         <Form.Label>Enter Image ID:</Form.Label>
+
         <Form.Control
           type='text'
-          placeholder='Image ID'
-          value={imageId}
+          placeholder={`Available IDs: ${Object.keys(imageId).join(', ')}`}
+          value={imageId[currentImageIndex]?.id}
           onChange={e => setImageId(e.target.value)}
         />
         <Button variant='primary' onClick={handleGetImage} className='mt-2'>
           Get Image
         </Button>
       </Form.Group>
-
       <Button variant='primary' onClick={handleGetAllImages}>
         View All Images
       </Button>
 
+      {/* Display the image by ID in a card */}
+    {/* Display the card only when showCard is true */}
+    {showCard && (
+        <div className='card' style={{ width: '400px', height: '400px' }}>
+          <span
+            className='close-icon'
+            onClick={() => setShowCard(false)}
+              style={{cursor: "pointer"}}>
+            &times;
+          </span>
+          {displayedImage && (
+            <img
+              src={displayedImage}
+              alt={`${currentImageIndex + 1}`}
+              className='rounded img-fluid mx-auto d-block'
+              style={{ width: '100%', height: '90%' }}
+            />
+          )}
+        </div>
+      )}
       <Modal show={showModal} onHide={handleModalClose} centered>
-  <Modal.Body>
-    {images.length > 0 && !displayedImage && (
-      <img
-        src={`data:image/jpeg;base64,${images[currentImageIndex]}`}
-        alt={`${currentImageIndex + 1}`}
-        className='rounded img-fluid mx-auto d-block'
-        style={{ width: '500px', height: '500px' }}
-      />
-    )}
-
-    {displayedImage && (
-      <img
-        src={displayedImage}
-        alt={`${currentImageIndex + 1}`}
-        className='rounded img-fluid mx-auto d-block'
-        style={{ width: '500px', height: '500px' }}
-      />
-    )}
-  </Modal.Body>
-
+        <Modal.Body>
+          {images.length > 0 && (
+            <img
+              src={`data:image/jpeg;base64,${images[currentImageIndex]?.data}`}
+              alt={`${imageId[currentImageIndex]?.id}`}
+              className='rounded img-fluid mx-auto d-block'
+              style={{ width: '500px', height: '500px' }}
+            />
+          )}
+        </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={handleModalClose}>
             Close
@@ -186,7 +209,7 @@ function ListImageComponent () {
         </Modal.Footer>
       </Modal>
     </div>
-  )
+  );
 }
 
 export default ListImageComponent

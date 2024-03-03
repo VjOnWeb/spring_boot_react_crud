@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const REST_API_IMAGE_URL = "http://lccalhost:3000/api/images";
+const REST_API_IMAGE_URL = "http://lccalhost:3838/api/images";
 
 export const  listAllImages = () => axios.get(REST_API_IMAGE_URL + "/all_images");
 

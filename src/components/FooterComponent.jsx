@@ -13,13 +13,16 @@ const FooterComponent = () => {
             <h5>Quick Links</h5>
             <ul className='list-unstyled'>
               <li>
-                <a href='http://localhost:3000/'>Home</a>
+                <a href='http://localhost:3838/'>Home</a>
               </li>
               <li>
-                <a href='http://localhost:3000/users'>User List</a>
+                <a href='http://localhost:3838/users'>User List</a>
               </li>
               <li>
-                <a href='http://localhost:3000/images'>User Images</a>
+                <a href='http://localhost:3838/images'>User Images</a>
+              </li>
+              <li>
+                <a href='http://localhost:3838/notes'>User Notes</a>
               </li>
               <li>
                 <a href='#services'>Services</a>
