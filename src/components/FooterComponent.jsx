@@ -13,16 +13,16 @@ const FooterComponent = () => {
             <h5>Quick Links</h5>
             <ul className='list-unstyled'>
               <li>
-                <a href='https://vjonweb.github.io/spring_boot_react_crud/'>Home</a>
+                <a href='/spring_boot_react_crud/'>Home</a>
               </li>
               <li>
-                <a href='https://vjonweb.github.io/spring_boot_react_crud/users'>User List</a>
+                <a href='/spring_boot_react_crud/users'>User List</a>
               </li>
               <li>
-                <a href='https://vjonweb.github.io/spring_boot_react_crud/images'>User Images</a>
+                <a href='spring_boot_react_crud/images'>User Images</a>
               </li>
               <li>
-                <a href='https://vjonweb.github.io/spring_boot_react_crud/notes'>User Notes</a>
+                <a href='/spring_boot_react_crud/notes'>User Notes</a>
               </li>
               <li>
                 <a href='#services'>Services</a>
