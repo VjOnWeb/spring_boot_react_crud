@@ -31,27 +31,6 @@ const FooterComponent = () => {
             </ul>
           </div>
           <div className='col-md-3'>
-            <h5>Quick Links</h5>
-            <ul className='list-unstyled'>
-              <li>
-                <a href='http://localhost:3838/'>Home</a>
-              </li>
-              <li>
-                <a href='http://localhost:3838/users'>User List</a>
-              </li>
-              <li>
-                <a href='http://localhost:3838/images'>User Images</a>
-              </li>
-              <li>
-                <a href='http://localhost:3838/notes'>User Notes</a>
-              </li>
-              <li>
-                <a href='#services'>Services</a>
-              </li>
-              {/* Add more links as needed */}
-            </ul>
-          </div>
-          <div className='col-md-3'>
             <h5>Contact Us</h5>
             <ul className='list-unstyled'>
               <li>
