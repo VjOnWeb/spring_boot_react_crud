@@ -9,7 +9,7 @@ import UserManagementComponent from './components/UserManagementComponent.jsx'
 function App () {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter  basename="/spring_boot_react_crud">
         <HeaderComponent />
         <Routes>
           <Route path='/' element={<HomePage />}></Route>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const REST_API_NOTES_URL = "http://localhost:3838/api/notes";
+const REST_API_NOTES_URL = "http://localhost:9898/api/notes";
 
 const NoteService = {
     getAllNotes: () => axios.get(`${REST_API_NOTES_URL}`),
