@@ -16,13 +16,13 @@ const FooterComponent = () => {
                 <a href='/spring_boot_react_crud/'>Home</a>
               </li>
               <li>
-                <a href='/spring_boot_react_crud/users'>User List</a>
+                <a href='/users'>User List</a>
               </li>
               <li>
-                <a href='spring_boot_react_crud/images'>User Images</a>
+                <a href='/images'>User Images</a>
               </li>
               <li>
-                <a href='/spring_boot_react_crud/notes'>User Notes</a>
+                <a href='/notes'>User Notes</a>
               </li>
               <li>
                 <a href='#services'>Services</a>
