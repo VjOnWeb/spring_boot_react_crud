@@ -9,6 +9,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.\
+Open [https://vjonweb.github.io/spring_boot_react_crud](https://vjonweb.github.io/spring_boot_react_crud) to view it in your browser.
 Open [http://localhost:3838](http://localhost:3838) to view it in your browser.
 
 The page will reload when you make changes.\
