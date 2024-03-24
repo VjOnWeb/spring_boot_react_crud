@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/spring_boot_react_crud/static/css/main.5d5cc0f2.css",
-    "main.js": "/spring_boot_react_crud/static/js/main.fa453495.js",
+    "main.js": "/spring_boot_react_crud/static/js/main.f0e40942.js",
     "static/js/787.ca69f33c.chunk.js": "/spring_boot_react_crud/static/js/787.ca69f33c.chunk.js",
     "static/media/fa-solid-900.ttf": "/spring_boot_react_crud/static/media/fa-solid-900.45a265d0f07b31cde85f.ttf",
     "static/media/fa-brands-400.ttf": "/spring_boot_react_crud/static/media/fa-brands-400.6205fd00fb1b573e9f0f.ttf",
@@ -13,11 +13,11 @@
     "static/media/fa-v4compatibility.woff2": "/spring_boot_react_crud/static/media/fa-v4compatibility.b3049b13a93f07e026fc.woff2",
     "index.html": "/spring_boot_react_crud/index.html",
     "main.5d5cc0f2.css.map": "/spring_boot_react_crud/static/css/main.5d5cc0f2.css.map",
-    "main.fa453495.js.map": "/spring_boot_react_crud/static/js/main.fa453495.js.map",
+    "main.f0e40942.js.map": "/spring_boot_react_crud/static/js/main.f0e40942.js.map",
     "787.ca69f33c.chunk.js.map": "/spring_boot_react_crud/static/js/787.ca69f33c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5d5cc0f2.css",
-    "static/js/main.fa453495.js"
+    "static/js/main.f0e40942.js"
   ]
 }
