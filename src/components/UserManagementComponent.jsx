@@ -18,8 +18,8 @@ const UserManagementComponent = () => {
     age: '',
     occupation: ''
   });
-  const [useJsonData, setUseJsonData] = useState(false); // Boolean flag to switch between API and JSON data
-  const [showPopup, setShowPopup] = useState(false); // State to control popup visibility
+  const [useJsonData, setUseJsonData] = useState(true); // Boolean flag to switch between API and JSON data
+  const [showPopup, setShowPopup] = useState(true); // State to control popup visibility
 
   useEffect(() => {
     // Fetch the list of users on component mount
