@@ -1,19 +1,11 @@
-import { default as React, useState } from 'react';
+import { default as React } from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'react-router-dom';
 // Import necessary Bootstrap classes
 import { Card, Col, Container, Row } from 'react-bootstrap';
 
 const HomePage = () => {
-  // Import your weather API provider code here
-  const [weatherData, setWeatherData] = useState(null);
 
-  // useEffect(() => {
-  //   // Fetch weather data on component mount
-  //   fetchWeatherData() // Call your weather API function here
-  //     .then((data) => setWeatherData(data))
-  //     .catch((error) => console.error(error));
-  // }, []);
 
 return (
   <div>
@@ -60,30 +52,7 @@ return (
           </Card>
         </Col>
 
-        <Col xs={12} md={6} lg={4}>
-          <Card className="shadow-sm">
-            <Card.Body>
-              <Card.Title className="h5">Weather</Card.Title>
-              {/* Display fetched weather data here */}
-              {weatherData ? (
-                <div>
-                  <p>
-                    <i className="bi bi-thermometer-fill"></i> {weatherData.temperature}°C
-                  </p>
-                  <p>
-                    <i className="bi bi-cloud-fill"></i> {weatherData.weatherDescription}
-                  </p>
-                  {/* Add more weather details as needed */}
-                </div>
-              ) : (
-                <p>Loading weather...</p>
-              )}
-            </Card.Body>
-            <Card.Footer className="text-muted">
-              <i className="bi bi-geo-alt-fill me-2"></i> Your location
-            </Card.Footer>
-          </Card>
-        </Col>
+    
       </Row>
     </Container>
   </div>
