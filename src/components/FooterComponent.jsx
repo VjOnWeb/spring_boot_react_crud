@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const FooterComponent = () => {
   return (
@@ -50,4 +50,4 @@ const FooterComponent = () => {
   )
 }
 
-export default FooterComponent
+export default FooterComponent;

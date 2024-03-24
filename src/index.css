@@ -12,6 +12,29 @@ code {
     monospace;
 }
 
+/* Header */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand .text-primary {
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #ffcc00;
+}
+
 
 .popup {
   position: fixed;
