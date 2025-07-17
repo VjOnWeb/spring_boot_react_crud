@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Header */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand .text-primary {
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #343a40;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer a:hover {
+  color: #ffcc00;
+}
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to bottom right, #4e54c8, #8f94fb);
+  width: 80%;
+  max-width: 400px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 99;
+}
+
+.popup-content {
+  color: #fff;
+}
+
+#flexSwitchCheckDefault{
+  position: absolute;
+}
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+}
+
+.popup-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.info-icon {
+  position: absolute;
+  top: 50%;
+  right: -30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #007bff;
+}
+
+.info-icon:hover {
+  color: #0056b3;
+}
